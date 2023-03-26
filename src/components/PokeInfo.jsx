@@ -7,13 +7,12 @@ const PokeInfo = ({url}) => {
 
     useEffect(()=>{
         axios.get(url)
-        .then((resp)=>{setPokeInfo(resp.data) 
-            console.log(resp.data)})
+        .then((resp)=>setPokeInfo(resp.data))
         .catch(error=>console.error(error))
   },[])
 
     return (  
-        <Link to={`/pokedex/${1}`} className="container-pokecard">
+        <Link to={`/pokedex/${pokeInfo?.id}`} className="container-pokecard">
               <div>
                 <h5>{pokeInfo.name}</h5>
               </div>

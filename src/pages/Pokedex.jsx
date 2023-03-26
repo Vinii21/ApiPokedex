@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const Pokedex = () => {
 
   const [types, setTypes] = useState([])
+  const [allPokemons, setAllPokemons] = useState([])
   const [inputTypes, setInputTypes] = useState("AllPokemons")
   const [indexType, setIndexType] = useState(null)
 
@@ -15,11 +16,25 @@ const Pokedex = () => {
       setTypes(resp.data.results)
     })
     .catch(error=>console.error(error))
+
+    getAllPokemons()
   },[])
+
+  const getAllPokemons = () => {
+    axios.get("https://pokeapi.co/api/v2/pokemon/")
+    .then(resp=>setAllPokemons(resp.data.results))
+    .catch(error=>console.error(error))
+  }
+ 
 
   const onSubmit = (e) => {
     e.preventDefault()
-    inputTypes === "AllPokemons" ? setIndexType(null) : setIndexType(types.findIndex(type => type.name === inputTypes))
+    if(inputTypes === "AllPokemons"){
+      setIndexType(null)
+      getAllPokemons()
+    } else {
+      setIndexType(types.findIndex(type => type.name === inputTypes))
+    }
   }
 
   return (
@@ -45,10 +60,10 @@ const Pokedex = () => {
         <input type="search" name="types" list="types" className="search-pokedex" value={inputTypes} onChange={(e)=>setInputTypes(e.target.value)}/>
         <button type="submit">Search</button>
       </form>
-      <p>{types?.[0]?.name}</p>
       <PokemonCard 
         types={types}
         indexType={indexType}
+        allPokemons={allPokemons}
       />
     </div>
     <datalist id="types">
