@@ -4,6 +4,8 @@
   height: auto;
   transform: rotate(45deg);
   translate: 45px -45px;
+  position: absolute;
+  z-index: -1;
 }
 
 /*vista pokedex*/
@@ -30,16 +32,19 @@
   width: 50vw;
 }
 
-.pokemon-card{
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  text-decoration: none;
-  color: black;
-
-}
 
 /*pokecard*/
+
+.pokemon-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
 
 .container-pokecard{
   border: 1px solid black;
