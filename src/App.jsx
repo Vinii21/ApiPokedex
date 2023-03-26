@@ -1,14 +1,28 @@
-import { useState } from 'react'
-import './App.css'
+import { HashRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Pokedex from "./pages/Pokedex";
+import ProtectedRoutes from "./componets/ProtectRoutes";
+import DetailPokemon from "./pages/DetailPokemon";
+import Backgroud from "./componets/Backgroud";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-
-    </div>
-  )
+    <HashRouter>
+      <div className="App">
+        <Routes>
+          <Route element={<Backgroud />}>
+            <Route path="/" element={<Home />} />
+            {/* //rutas protegidas */}
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/pokedex" element={<Pokedex />} />
+              <Route path="/pokedex/:id" element={<DetailPokemon />} />
+            </Route>
+          </Route>
+        </Routes>
+      </div>
+    </HashRouter>
+  );
 }
 
-export default App
+export default App;

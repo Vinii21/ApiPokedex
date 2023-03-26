@@ -1,0 +1,51 @@
+
+.img-background{
+  width: 300px;
+  height: auto;
+  transform: rotate(45deg);
+  translate: 45px -45px;
+}
+
+/*vista pokedex*/
+.container-pokedex{
+  padding: 1rem;
+  height: 100vh;
+  
+}
+
+.switch-pokedex{
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  justify-content: center;
+  margin: 1rem;
+}
+
+.search-input-pokedex{
+  display: grid;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.search-pokedex{
+  width: 50vw;
+}
+
+.pokemon-card{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  text-decoration: none;
+  color: black;
+
+}
+
+/*pokecard*/
+
+.container-pokecard{
+  border: 1px solid black;
+  width: 200px; 
+}
+
+.container-info-pokecard{
+  display: grid;
+}
