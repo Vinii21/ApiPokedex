@@ -10,7 +10,9 @@ const DetailPokemon = () => {
 
   useEffect(()=>{
     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-    .then(resp=>console.log(resp.data))
+    .then(resp=>{setPokemon(resp.data)
+      console.log(resp.data)
+    })
     .catch(error=>console.error(error))
   },[])
 
@@ -22,7 +24,7 @@ const DetailPokemon = () => {
       </aside>
       <div>
         <div>
-          <p>aqui va la imagen</p>
+          <img src="" alt="" />
         </div>
         <div>
           <div>
@@ -30,8 +32,8 @@ const DetailPokemon = () => {
             <span>Height (numero)</span>
           </div>
           <div>
-            <h3>nombre</h3>
-            <p># del pokemon</p>
+            <h3>{pokemon?.name}</h3>
+            <p>#{id}</p>
           </div>
         </div>
         <div>
@@ -39,8 +41,8 @@ const DetailPokemon = () => {
             <h3>Type</h3>
           </div>
           <div>
-            <span>types1</span>
-            <span>types2</span>
+            <span>{pokemon?.types?.[0].type.name}</span>
+            <span>{pokemon?.types?.[1].type.name}</span>
           </div>
         </div>
         <div>
@@ -48,7 +50,7 @@ const DetailPokemon = () => {
             <h3>Abilities</h3>
           </div>
           <div>
-          <span>abilities1</span>
+          <span>{}</span>
             <span>abilities2</span>
           </div>
         </div>
