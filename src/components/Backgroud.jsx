@@ -3,7 +3,7 @@ const Backgroud = () => {
   return (
     <div className='background'>
       
-        <img className='img-background float-end' src="/public/pokeball.png" alt="/pokeball.png" />
+        <img className='img-background float-end' src="/pokeball.png" alt="/pokeball.png" />
      
       <Outlet />
     </div>

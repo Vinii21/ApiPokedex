@@ -25,7 +25,7 @@ const Pokedex = () => {
   },[])
 
   const getAllPokemons = () => {
-    axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281")
+    axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12")
     .then(resp=>setAllPokemons(resp.data.results))
     .catch(error=>console.error(error))
   }
