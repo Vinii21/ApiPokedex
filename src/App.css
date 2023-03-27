@@ -1,4 +1,5 @@
-.img-background {
+
+.img-background{
   width: 300px;
   height: auto;
   transform: rotate(45deg);
@@ -14,6 +15,12 @@
   padding: 1rem;
   height: 100vh;
 
+}
+
+.form-check{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .switch-pokedex {
@@ -44,6 +51,18 @@
   background-color: #3a86ff;
 }
 
+.bx{
+  font-size: 30px;
+}
+
+.bx-male-sign{
+  color: #3a86ff;
+}
+
+.bx-female-sign{
+  color: #ff3aff;
+}
+
 
 /*pokecard*/
 
@@ -58,18 +77,41 @@
 }
 
 
-.container-pokecard {
+.container-pokecard{
   border: 1px solid black;
-  width: 200px;
+  width: 200px; 
   padding: 1rem;
   background-color: #23b1a1;
   text-decoration: none;
   color: black;
   border-radius: 10px;
+  color: white;
+}
+
+.title-pokecard{
+  padding-top: 1rem;
+  padding-left: 0.5rem;
 }
 
 .container-info-pokecard {
   display: grid;
+  gap: 0.2rem;
+  padding-top: 0.5rem;
+  padding-left: 0.6rem;
+}
+
+
+.container-info-pokecard span{
+  background-color: rgba(229, 230, 229, 0.504);
+  border-radius: 24px;
+  padding: 4px;
+  width: max-content ;
+}
+
+.img-pokecard{
+  width: 90px;
+  height: 90px;
+  translate: 95px -30px;
 }
 
 /* detalles de pokemon */
