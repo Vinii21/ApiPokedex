@@ -12,7 +12,6 @@ const Pokedex = () => {
 
   const [checkbox, setCheckbox] = useState(false)
   const [inputPokeName, setInputPokeName] = useState("")
-  const [pokeIndie, setPokeIndie] = useState({})
 
 
   useEffect(()=>{
@@ -102,7 +101,6 @@ const Pokedex = () => {
         indexType={indexType}
         allPokemons={allPokemons}
         checkbox={checkbox}
-        pokeIndie={pokeIndie}
         inputPokeName={inputPokeName}
       />
     </div>

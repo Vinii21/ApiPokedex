@@ -1,3 +1,95 @@
+/* HOME */
+
+.container__home{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cfcdcda5;
+  backdrop-filter: blur(5px);
+}
+
+.container__input{
+  width: 80%;
+}
+
+.container__home .container__input .input{
+  margin-top: 30px;
+  background-color: #ffffff;
+  height: 40px;
+  border-radius: 24px;
+  position: relative;
+  box-shadow: inset 2px 2px 8px #000000ad;
+}
+
+.container__home .container__input .input button{
+  border: none;
+
+}
+
+.container__home .container__input .input input{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.container__home .input img{
+  height: 60px;
+  position: absolute;
+  top: -5px;
+  right: -25px;
+  transition: all .5s linear;
+  cursor: pointer;
+}
+
+.container__home .input img:hover{
+  transform: scale(0.9);
+}
+
+.container__home .container__pokemons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+.container__home .container__pokemons img{
+  width: 70px;
+}
+
+.container__home .container__pokemons img:nth-child(1){
+  animation: move infinite linear 1s;
+}
+
+.container__home .container__pokemons img:nth-child(2){
+  animation: move infinite linear .9s;
+}
+
+.container__home .container__pokemons img:nth-child(3){
+  animation: move infinite linear 1s;
+}
+
+@keyframes move {
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(-10px);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  75%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
 
 .img-background{
   width: 300px;
@@ -15,6 +107,12 @@
   padding: 1rem;
   height: 100vh;
   
+}
+
+.form-check{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .switch-pokedex{
@@ -43,6 +141,18 @@
   border-radius: 8px;
   padding: 5px;
   background-color: #3a86ff;
+}
+
+.bx{
+  font-size: 30px;
+}
+
+.bx-male-sign{
+  color: #3a86ff;
+}
+
+.bx-female-sign{
+  color: #ff3aff;
 }
 
 
