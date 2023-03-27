@@ -6,4 +6,6 @@
 
 body{
   font-family: 'Carter One', cursive;
+  overflow-x: hidden;
 }
+
