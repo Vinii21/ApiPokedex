@@ -5,6 +5,8 @@
   transform: rotate(45deg);
   translate: 45px -45px;
   position: absolute;
+  top: 0;
+  right: 0;
   z-index: -1;
 }
 
@@ -32,6 +34,17 @@
   width: 50vw;
 }
 
+.search-input-pokedex{
+  display: grid;
+  gap: 1rem;
+}
+
+.btnSearch{
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #3a86ff;
+}
+
 
 /*pokecard*/
 
@@ -49,6 +62,11 @@
 .container-pokecard{
   border: 1px solid black;
   width: 200px; 
+  padding: 1rem;
+  background-color: #23b1a1;
+  text-decoration: none;
+  color: black;
+  border-radius: 10px;
 }
 
 .container-info-pokecard{

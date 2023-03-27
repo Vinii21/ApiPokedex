@@ -58,7 +58,7 @@ const Pokedex = () => {
       </div>
       <form onSubmit={onSubmit} className="search-input-pokedex">
         <input type="search" name="types" list="types" className="search-pokedex" value={inputTypes} onChange={(e)=>setInputTypes(e.target.value)}/>
-        <button type="submit">Search</button>
+        <button className="btnSearch" type="submit">Search</button>
       </form>
       <PokemonCard 
         types={types}
