@@ -2,6 +2,7 @@
 import PokemonCard from "../components/PokemonCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Paginacion from "../components/Paginacion";
 
 const Pokedex = () => {
 
@@ -12,6 +13,15 @@ const Pokedex = () => {
 
   const [checkbox, setCheckbox] = useState(false)
   const [inputPokeName, setInputPokeName] = useState("")
+
+  const [pokemonsPerPage, setPokemonsPerPage] = useState(5)
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const [pokemons, setPokemons] = useState([])
+  const [alls, setAlls] = useState([])
+
+  const lastIndex = currentPage * pokemonsPerPage
+  const firstIndex = lastIndex - pokemonsPerPage
 
 
   useEffect(()=>{
@@ -25,7 +35,7 @@ const Pokedex = () => {
   },[])
 
   const getAllPokemons = () => {
-    axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12")
+    axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1281")
     .then(resp=>setAllPokemons(resp.data.results))
     .catch(error=>console.error(error))
   }
@@ -102,6 +112,20 @@ const Pokedex = () => {
         allPokemons={allPokemons}
         checkbox={checkbox}
         inputPokeName={inputPokeName}
+        lastIndex={lastIndex}
+        firstIndex={firstIndex}
+        setAlls={setAlls}
+        alls={alls}
+        setPokemons={setPokemons}
+        pokemons={pokemons}
+      />
+      <Paginacion 
+        pokemonsPerPage={pokemonsPerPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPokemonsAlls={alls?.length}
+        totalPokemonsPokemons={pokemons?.length}
+        indexType={indexType}
       />
     </div>
     {

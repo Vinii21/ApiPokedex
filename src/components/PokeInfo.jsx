@@ -24,8 +24,6 @@ const pokeImage = (img) =>{
   }
 }
 
-console.log(pokeImage(pokeInfo))
-
     return (  
         <Link to={`/pokedex/${pokeInfo?.id}`} className="container-pokecard">
               <div className="title-pokecard">

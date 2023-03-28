@@ -2,10 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PokeInfo from "./PokeInfo";
 
-const PokemonCard = ({types, indexType, allPokemons, checkbox, inputPokeName}) => {
+const PokemonCard = ({types, indexType, allPokemons, checkbox, firstIndex, lastIndex, pokemons, setPokemons, alls, setAlls}) => {
 
-  const [pokemons, setPokemons] = useState([])
-  const [alls, setAlls] = useState([])
 
   useEffect(()=>{
     if(checkbox){
@@ -31,13 +29,13 @@ const PokemonCard = ({types, indexType, allPokemons, checkbox, inputPokeName}) =
               return(
                 <PokeInfo key={index} url={all.url}/>
               )
-            })
+            }).slice(firstIndex, lastIndex)
             :
             pokemons?.map((pokemon)=> {
               return(
                 <PokeInfo key={checkbox ? pokemon.url : pokemon.pokemon.url} url={checkbox ? pokemon.url : pokemon.pokemon.url}/>
               )
-            })
+            }).slice(firstIndex, lastIndex)
       }
     </div>
    );
