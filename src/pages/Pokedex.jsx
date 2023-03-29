@@ -94,9 +94,11 @@ const Pokedex = () => {
     <>
     <ButtonClose />
     <div className="container-pokedex">
-      <h1 className="title-pokedex">Pokedex</h1>
-      <div className="welcome-pokedex">
-        <p>"Welcome {trainer.name}, here you can find your favorite pokemon"</p>
+      <div className="container__welcome">
+        <img className="pokedex" src="/Pokedex_logo.png" alt="Logo pokedex" />
+        <div className="welcome-pokedex">
+          <p>"Welcome {trainer.name}, here you can find your favorite pokemon"</p>
+        </div>
       </div>
 
       <div className="switch-pokedex">
@@ -119,14 +121,11 @@ const Pokedex = () => {
       <form onSubmit={onSubmit} className="search-input-pokedex">
         {
           checkbox ?
-          <div>
             <input className="search-pokedex" list="names" name="names" type="text" placeholder="Searh Pokemon" value={inputPokeName} onChange={(e)=>setInputPokeName(e.target.value)}/>
-            <i className='bx bx-search-alt'></i>
-          </div>
           :
-          <input type="search" name="types" list="types" className="search-pokedex" value={inputTypes} onChange={(e)=>setInputTypes(e.target.value)}/>
+            <input type="search" name="types" list="types" className="search-pokedex" value={inputTypes} onChange={(e)=>setInputTypes(e.target.value)}/>
         }
-        <button className="btnSearch" type="submit">Search</button>
+        <button className="btnSearch" type="submit"><i className='bx bx-search-alt'></i></button>
       </form>
       <PokemonCard 
         types={types}
