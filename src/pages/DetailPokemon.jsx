@@ -10,12 +10,20 @@ const DetailPokemon = () => {
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-      .then((resp) => {
-        setPokemon(resp.data);
-        console.log(resp.data);
-      })
-      .catch((error) => console.error(error));
+      .then((resp) =>setPokemon(resp.data))
+      .catch((error) => console.error(error))
   }, []);
+
+  const pokeImage = (img) =>{
+    if (img?.sprites?.other?.home?.front_default!=null) {
+      return img?.sprites?.other?.home?.front_default
+    }else if (img?.sprites?.other?.dream_world?.front_default==null){
+      return img?.sprites?.front_default 
+    }else if (img?.sprites?.other?.home?.front_default==null){
+    return  img?.sprites?.other?.dream_world?.front_default
+    }
+  }
+
 
   return (
     <div className="container-Detailt">
@@ -23,7 +31,7 @@ const DetailPokemon = () => {
         <div className="container-img-detailt">
           <img
             className="img-detailt"
-            src={pokemon?.sprites?.other?.dream_world?.front_default}
+            src={pokeImage(pokemon)}
             alt={pokemon?.name}
           />
         </div>

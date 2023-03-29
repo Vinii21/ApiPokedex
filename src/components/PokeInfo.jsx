@@ -11,8 +11,6 @@ const PokeInfo = ({url}) => {
         .catch(error=>console.error(error))
   },[])
 
-const official = "official-artwork"
-
 
 const pokeImage = (img) =>{
   if (img?.sprites?.other?.home?.front_default!=null) {

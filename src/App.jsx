@@ -7,6 +7,7 @@ import DetailPokemon from "./pages/DetailPokemon";
 import Backgroud from "./components/Backgroud";
 import ButtonSettings from "./components/ButtonSettings";
 import Settings from "./pages/Settings";
+import ButtonBack from "./components/ButtonBack";
 
 function App() {
   return (
@@ -14,15 +15,17 @@ function App() {
       <div className="App">
         <Routes>
           <Route element={<Backgroud />}>
-          <Route path="/settings" element={<Settings/>}/>
-          <Route element={<ButtonSettings />}>
-            <Route path="/" element={<Home />} />
-            {/* //rutas protegidas */}
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/pokedex" element={<Pokedex />} />
-              <Route path="/pokedex/:id" element={<DetailPokemon />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route element={<ButtonSettings />}>
+              <Route path="/" element={<Home />} />
+              {/* //rutas protegidas */}
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/pokedex" element={<Pokedex />} />
+                <Route element={<ButtonBack />}>
+                  <Route path="/pokedex/:id" element={<DetailPokemon />} />
+                </Route>
+              </Route>
             </Route>
-          </Route>
           </Route>
         </Routes>
       </div>
