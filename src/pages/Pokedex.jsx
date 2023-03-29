@@ -4,8 +4,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Pagination from "react-pagination-library";
 import "react-pagination-library/build/css/index.css";
+import { useDispatch, useSelector } from "react-redux"
+import ButtonClose from "../components/ButtonClose";
 
 const Pokedex = () => {
+
+  const trainer = useSelector( state=> state.trainer)
 
   const [types, setTypes] = useState([])
   const [allPokemons, setAllPokemons] = useState([])
@@ -88,10 +92,11 @@ const Pokedex = () => {
 
   return (
     <>
+    <ButtonClose />
     <div className="container-pokedex">
       <h1 className="title-pokedex">Pokedex</h1>
       <div className="welcome-pokedex">
-        <p>"Welcome (name), here you can find your favorite pokemon"</p>
+        <p>"Welcome {trainer.name}, here you can find your favorite pokemon"</p>
       </div>
 
       <div className="switch-pokedex">
