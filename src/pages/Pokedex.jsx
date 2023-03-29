@@ -2,7 +2,8 @@
 import PokemonCard from "../components/PokemonCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Paginacion from "../components/Paginacion";
+import Pagination from "react-pagination-library";
+import "react-pagination-library/build/css/index.css";
 
 const Pokedex = () => {
 
@@ -16,6 +17,8 @@ const Pokedex = () => {
 
   const [pokemonsPerPage, setPokemonsPerPage] = useState(5)
   const [currentPage, setCurrentPage] = useState(1)
+
+  const [totalPages, setTotalPages] = useState(0)
 
   const [pokemons, setPokemons] = useState([])
   const [alls, setAlls] = useState([])
@@ -39,6 +42,20 @@ const Pokedex = () => {
     .then(resp=>setAllPokemons(resp.data.results))
     .catch(error=>console.error(error))
   }
+
+  useEffect(()=>{
+    let total = 0
+
+    if(indexType === null){
+       total = alls.length
+    } else {
+        total = pokemons.length
+    }
+
+    for(let i = 1; i <= Math.ceil(total / pokemonsPerPage); i++){
+        setTotalPages(i)
+    }
+})
  
 
   const onSubmit = (e) => {
@@ -119,14 +136,12 @@ const Pokedex = () => {
         setPokemons={setPokemons}
         pokemons={pokemons}
       />
-      <Paginacion 
-        pokemonsPerPage={pokemonsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        totalPokemonsAlls={alls?.length}
-        totalPokemonsPokemons={pokemons?.length}
-        indexType={indexType}
-      />
+      <Pagination
+          currentPage={currentPage}
+          changeCurrentPage={page => setCurrentPage(page)}
+          theme="bottom-border"
+          totalPages={totalPages}
+        />
     </div>
     {
       checkbox ? 
