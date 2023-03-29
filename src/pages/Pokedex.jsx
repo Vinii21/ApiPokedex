@@ -136,12 +136,14 @@ const Pokedex = () => {
         setPokemons={setPokemons}
         pokemons={pokemons}
       />
+      <div className="container__pagination">
       <Pagination
           currentPage={currentPage}
           changeCurrentPage={page => setCurrentPage(page)}
           theme="bottom-border"
           totalPages={totalPages}
         />
+      </div>
     </div>
     {
       checkbox ? 

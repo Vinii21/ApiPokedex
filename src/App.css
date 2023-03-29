@@ -319,3 +319,25 @@
   background-color: white;
   border-radius: 10px;
 }
+
+/* Paginacion */
+
+.container__pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__pagination ul{
+  width: 100%;
+}
+
+.bottom-border .is-active li{
+  border-bottom: 3px solid #2e85cc!important;
+}
+
+.container__pagination ul a,li{
+  font-size: 14px;
+  padding: 5px;
+}
