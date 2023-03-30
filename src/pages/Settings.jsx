@@ -20,9 +20,10 @@ const Settings = () => {
     });
   };
   return (
-    <div>
-      <div>
-      <h6>Pokedex settings!</h6>
+    <div className="container__settings">
+      <div className="container__settings__box">
+      <div className="settings__title">
+      <h1>Pokedex settings!</h1>
       </div>
        <div className="switch-pokedex">
         <span className="title-switch-pokedex"><i className='bx bx-sun'></i></span>
@@ -42,16 +43,16 @@ const Settings = () => {
         <span className="title-switch-pokedex"><i class='bx bx-moon'></i></span>
       </div>
       <div>
-        <form onSubmit={handleSubmit(sumit)} className="container__input">
-          <div className="input">
+        <form onSubmit={handleSubmit(sumit)} className="container__input__settings">
+          <div className="input__settings">
             <input
               {...register("name", { required: true })}
               name="name"
               type="text"
-              placeholder={`name ${name.name}`}
+              placeholder={`Current name is: ${name.name}`}
             />
           </div>
-          <div>
+          <div className="settings__genre">
             <label htmlFor="male">
               <i className="bx bx-male-sign"></i>
             </label>
@@ -74,9 +75,10 @@ const Settings = () => {
             />
           </div>
           <div>
-            <button type="submit">Editar</button>
+            <button className="settings__button" type="submit">Update information</button>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );

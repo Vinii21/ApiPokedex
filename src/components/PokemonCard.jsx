@@ -4,7 +4,6 @@ import PokeInfo from "./PokeInfo";
 
 const PokemonCard = ({types, indexType, allPokemons, checkbox, firstIndex, lastIndex, pokemons, setPokemons, alls, setAlls}) => {
 
-
   useEffect(()=>{
     if(checkbox){
       if(indexType === null){
