@@ -6,6 +6,7 @@ import Pagination from "react-pagination-library";
 import "react-pagination-library/build/css/index.css";
 import { useDispatch, useSelector } from "react-redux"
 import ButtonClose from "../components/ButtonClose";
+import Profile from "../components/profile";
 
 const Pokedex = () => {
 
@@ -98,6 +99,7 @@ const Pokedex = () => {
         <img className="pokedex" src="/Pokedex_logo.png" alt="Logo pokedex" />
         <div className="welcome-pokedex">
           <p>"Welcome {trainer.name}, here you can find your favorite pokemon"</p>
+          < Profile />
         </div>
       </div>
 
