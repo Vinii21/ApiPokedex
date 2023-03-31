@@ -789,7 +789,7 @@ body .sttings i:hover {
 }
 .info-poke{
   border-radius: 15px;
-  background: rgb(135,191,255);
+  background-color: rgb(135,191,255);
   background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
 }
 
