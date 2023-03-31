@@ -516,12 +516,12 @@
 
 }
 
-.container-size {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+body .container-size {
+  border-radius: 15px;
   padding: 1rem;
   background-color: rgba(250, 235, 215, 0.716);
 }
+
 
 .container-type {
   padding: 1rem;
@@ -789,27 +789,32 @@ body .sttings i:hover {
 }
 .info-poke{
   border-radius: 15px;
-  background: rgb(135,191,255);
-  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+  
 }
 
 .container-size {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
   padding: 1rem;
- 
+  background: rgb(135,191,255);
+  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
 
 }
 
 .container-type {
   padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 15px;
+  background: rgb(135,191,255);
+  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
   
 }
 
 .container-abilities {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+
+  border-radius: 15px;
   padding: 1rem;
+  background: rgb(135,191,255);
+  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
 
 }
 
@@ -1034,8 +1039,7 @@ body .sttings i:hover {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     font-size: xx-large;
-    background: rgb(135,191,255);
-    background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+   
   }
 
   .container-abilities {
@@ -1043,20 +1047,20 @@ body .sttings i:hover {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     border-radius: 15px;
-    background: rgb(135,191,255);
-    background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+
   }
 
   .container-type {
     border-radius: 15px;
-    background: rgb(135,191,255);
-    background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+    margin: 0;
+  
   }
 
 
   .container-aside {
     width: 200px;
     height: 650px;
+    border-radius: 15px;
   }
 
   .type-abilities {
@@ -1072,5 +1076,7 @@ body .sttings i:hover {
   }
   .info-poke{
     background: none;
+    border-radius: 15px;
   }
+
 }
