@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Pagination from "react-pagination-library";
 import "react-pagination-library/build/css/index.css";
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import ButtonClose from "../components/ButtonClose";
 import Profile from "../components/profile";
 

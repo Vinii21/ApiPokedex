@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import PokeInfo from "./PokeInfo";
 
 const PokemonCard = ({types, indexType, allPokemons, checkbox, firstIndex, lastIndex, pokemons, setPokemons, alls, setAlls}) => {

@@ -16,8 +16,8 @@ function App() {
         <Routes>
           <Route element={<Backgroud />}>
             <Route path="/settings" element={<Settings />} />
+            <Route path="/" element={<Home />} />
             <Route element={<ButtonSettings />}>
-              <Route path="/" element={<Home />} />
               {/* //rutas protegidas */}
               <Route element={<ProtectedRoutes />}>
                 <Route path="/pokedex" element={<Pokedex />} />
