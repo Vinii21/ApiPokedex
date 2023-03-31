@@ -71,7 +71,7 @@ const Pokedex = () => {
       } else {
         let findPonkemon = allPokemons.findIndex(poke => poke.name === inputPokeName)
         if(findPonkemon === -1){
-          Swal.fire('Esa vara no existe!')
+          Swal.fire('This is not a pokemon')
         } else {
           setIndexType(findPonkemon)
         }
@@ -83,7 +83,7 @@ const Pokedex = () => {
       } else {
         let index = types.findIndex(type => type.name === inputTypes)
         if(index === -1){
-          Swal.fire('Esa vara no existe!')
+          Swal.fire('This is not a pokemon type')
         } else {
           setIndexType(index)
         }
