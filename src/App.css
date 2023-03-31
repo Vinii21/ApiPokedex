@@ -310,6 +310,10 @@
   margin-top: 20px;
 }
 
+.welcome-pokedex .color--name{
+  color: #bb0560;
+}
+
 .container-pokedex .welcome-pokedex {
   border: double 5px #000;
   background-color: #ffffff6a;
@@ -919,10 +923,6 @@ body .sttings i:hover {
 
   .container-pokedex .welcome-pokedex {
     width: 350px;
-  }
-
-  .welcome-pokedex .color--name{
-    color: #bb0560;
   }
 
   .container-pokedex .pokedex {
