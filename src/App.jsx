@@ -8,11 +8,15 @@ import Backgroud from "./components/Backgroud";
 import ButtonSettings from "./components/ButtonSettings";
 import Settings from "./pages/Settings";
 import ButtonBack from "./components/ButtonBack";
+import { useSelector } from "react-redux";
 
 function App() {
+
+  const darkMode = useSelector(state => state.darkMode)
+
   return (
     <HashRouter>
-      <div className="App">
+      <div className={darkMode ? "App dark" : "App"}>
         <Routes>
           <Route element={<Backgroud />}>
             <Route path="/settings" element={<Settings />} />

@@ -38,43 +38,45 @@ const DetailPokemon = () => {
             alt={pokemon?.name}
           />
         </div>
-        <div className="info-card">
-          <div className="container-size">
-            <div className="container-size-secound">
-              <span>Weight: {pokemon.weight}</span>
-              <span>Height: {pokemon.height}</span>
-            </div>
-            <div className="container-name">
-              <h3>{pokemon?.name}</h3>
-              <p className="id-poki">#{id}</p>
-            </div>
-          </div>
-          <div className="type-abilities">
-            <div className="container-type">
-              <div className="tipe-title">
-                <h3>Type</h3>
+        <div className="info-poke">
+          <div className="info-card">
+            <div className="container-size">
+              <div className="container-size-secound">
+                <span>Weight: {pokemon.weight}</span>
+                <span>Height: {pokemon.height}</span>
               </div>
-              <div className="container-span-type">
-                {pokemon?.types?.map((type, index) => {
-                  return (
-                    <span key={index} className="span-type1">
-                      {type.type.name}
-                    </span>
-                  );
-                })}
+              <div className="container-name">
+                <h3>{pokemon?.name}</h3>
+                <p className="id-poki">#{id}</p>
               </div>
             </div>
-            <div className="container-abilities">
-              <div className="abilities-title">
-                <h3>Abilities</h3>
+            <div className="type-abilities">
+              <div className="container-type">
+                <div className="tipe-title">
+                  <h3>Type</h3>
+                </div>
+                <div className="container-span-type">
+                  {pokemon?.types?.map((type, index) => {
+                    return (
+                      <span key={index} className="span-type1">
+                        {type.type.name}
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="container-span-abilite">
-                <span className="spana-abilities">
-                  {pokemon?.abilities?.[0]?.ability?.name}
-                </span>
-                <span className="spana-abilities">
-                  {pokemon?.abilities?.[1]?.ability?.name}
-                </span>
+              <div className="container-abilities">
+                <div className="abilities-title">
+                  <h3>Abilities</h3>
+                </div>
+                <div className="container-span-abilite">
+                  <span className="spana-abilities">
+                    {pokemon?.abilities?.[0]?.ability?.name}
+                  </span>
+                  <span className="spana-abilities">
+                    {pokemon?.abilities?.[1]?.ability?.name}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
