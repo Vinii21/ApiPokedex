@@ -12,7 +12,7 @@
 
 /* HOME */
 
-.dark {
+.dark{
   --color1: rgb(2, 70, 116);
   --color2: rgb(7, 167, 207);
   --color3: #471369de;
@@ -182,7 +182,7 @@
   color: rgb(252, 151, 1);
 }
 
-.container__form {
+.container__form{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,7 +218,7 @@
   color: #ffffff;
 }
 
-.btn--edit {
+.btn--edit{
   border: none;
   padding: 5px;
   border-radius: 14px;
@@ -229,7 +229,7 @@
   margin-bottom: 10px;
 }
 
-.btn--edit:hover {
+.btn--edit:hover{
   transform: scale(0.9);
 }
 
@@ -404,27 +404,27 @@
   overflow: hidden;
   z-index: 10;
   touch-action: none;
-
+  
   border-radius: 5% / 3.5%;
-  box-shadow:
-    -5px -5px 5px -5px var(--color1),
-    5px 5px 5px -5px var(--color2),
-    -7px -7px 10px -5px transparent,
-    7px 7px 10px -5px transparent,
-    0 0 5px 0px rgba(255, 255, 255, 0),
+  box-shadow: 
+    -5px -5px 5px -5px var(--color1), 
+    5px 5px 5px -5px var(--color2), 
+    -7px -7px 10px -5px transparent, 
+    7px 7px 10px -5px transparent, 
+    0 0 5px 0px rgba(255,255,255,0),
     0 55px 35px -20px rgba(0, 0, 0, 0.5);
-  transition: all .5s ease;
+    transition: all .5s ease;
 }
 
 .container-pokecard:hover {
-  box-shadow:
-    -20px -20px 30px -25px var(--color1),
-    20px 20px 30px -25px var(--color2),
-    -7px -7px 10px -5px var(--color1),
-    7px 7px 10px -5px var(--color2),
-    0 0 13px 4px rgba(255, 255, 255, 0.3),
+  box-shadow: 
+    -20px -20px 30px -25px var(--color1), 
+    20px 20px 30px -25px var(--color2), 
+    -7px -7px 10px -5px var(--color1), 
+    7px 7px 10px -5px var(--color2), 
+    0 0 13px 4px rgba(255,255,255,0.3),
     0 55px 35px -20px rgba(0, 0, 0, 0.5);
-  transform: rotate3d(1, 1, 1, 15deg) scale(0.9);
+    transform: rotate3d(1, 1, 1, 15deg) scale(0.9);
 }
 
 .container-pokecard:before,
@@ -444,7 +444,7 @@
 .container-pokecard:after {
   border-radius: inherit;
   opacity: 1;
-  background-image: url("/sparkles.gif"),
+  background-image: url("/sparkles.gif"),  
     linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
   background-position: 50% 50%;
   background-size: 160%;
@@ -458,8 +458,7 @@
 
 .container-pokecard.active:after,
 .container-pokecard:hover:after {
-  filter: brightness(1) contrast(1);
-  ;
+  filter: brightness(1) contrast(1);;
   opacity: 1;
 }
 
@@ -514,33 +513,26 @@
   max-height: 800px;
   flex-direction: column;
   padding: 1rem;
-  
 
-}
-.info-poke{
-  border-radius: 15px;
-  background: rgb(135,191,255);
-  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
 }
 
 .container-size {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 1rem;
- 
-
+  background-color: rgba(250, 235, 215, 0.716);
 }
 
 .container-type {
   padding: 1rem;
-  
+  background-color: rgba(250, 235, 215, 0.716);
 }
 
 .container-abilities {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 1rem;
-
+  background-color: rgba(250, 235, 215, 0.716);
 }
 
 .id-poki {
@@ -551,11 +543,11 @@
 .container-aside {
   width: 90%;
   height: 1000px;
-
+ 
   border-radius: 15px;
   padding: 1rem;
   height: 1000px;
-
+  
   overflow-y: scroll;
 
   display: flex;
@@ -565,8 +557,7 @@
   padding: 1rem;
   gap: 1rem;
   text-align: center;
-  background: rgb(135,191,255);
-  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+  background-color: rgba(250, 235, 215, 0.716);
 }
 
 .container-aside h3 {
@@ -579,8 +570,7 @@
   padding-right: 15px;
   width: max-content;
   border: 1px solid black;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background-color: azure;
   border-radius: 10px;
 }
 
@@ -761,7 +751,7 @@ body .sttings i:hover {
   align-items: center;
 }
 
-.profile__container img {
+.profile__container img{
   width: 100%;
   position: relative;
   top: 3px;
@@ -808,14 +798,14 @@ body .sttings i:hover {
     width: 200px;
   }
 
-  .container__pagination ul {
+  .container__pagination ul{
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
   }
 
-  .container__pagination ul li {
+  .container__pagination ul li{
     font-size: 25px;
   }
 
@@ -846,24 +836,22 @@ body .sttings i:hover {
   .img-background {
     width: 300px;
   }
-
-  .container__pagination ul li {
-    font-size: 30px;
-  }
-
-  .profile__container {
-    border-radius: 50%;
-    width: 80px;
-    border: 2px solid #000;
-    position: absolute;
-    top: 50px;
-    right: -40px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+    .container__pagination ul li{
+      font-size: 30px;
+    }
+    .profile__container{
+      border-radius: 50%;
+      width: 80px;
+      border: 2px solid #000;
+      position: absolute;
+      top: 50px;
+      right: -40px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
   .container-Detailt {
     flex-direction: row;
     justify-content: center;
@@ -889,25 +877,21 @@ body .sttings i:hover {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     font-size: xx-large;
-    background: rgb(135,191,255);
-    background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
   }
 
   .container-abilities {
     border-radius: 15px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    border-radius: 15px;
-    background: rgb(135,191,255);
-    background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
   }
 
   .container-type {
     border-radius: 15px;
-    background: rgb(135,191,255);
-    background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
   }
 
+  .container-abilities {
+    border-radius: 15px;
+  }
 
   .container-aside {
     width: 200px;
@@ -924,5 +908,13 @@ body .sttings i:hover {
       width: 100%;
       position: relative;
       top: 3px;
+    }
+    .container__settings__box {
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.39);
+      width: 25vw;
+      height: auto;
+      padding: 10px;
+      background-image: url("/triangles.webp");
     }
 }
