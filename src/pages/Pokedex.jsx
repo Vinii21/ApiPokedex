@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Pagination from "react-pagination-library";
 import "react-pagination-library/build/css/index.css";
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import ButtonClose from "../components/ButtonClose";
 import Profile from "../components/profile";
 
@@ -20,7 +20,7 @@ const Pokedex = () => {
   const [checkbox, setCheckbox] = useState(false)
   const [inputPokeName, setInputPokeName] = useState("")
 
-  const [pokemonsPerPage, setPokemonsPerPage] = useState(5)
+  const [pokemonsPerPage, setPokemonsPerPage] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
 
   const [totalPages, setTotalPages] = useState(0)

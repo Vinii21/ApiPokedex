@@ -1,4 +1,16 @@
+:root {
+  --color1: rgb(0, 231, 255);
+  --color2: rgb(255, 0, 231);
+  
+}
+
+
 /* HOME */
+
+.dark{
+  --color1: rgb(252, 247, 0);
+  --color2: rgb(27, 55, 179);
+}
 
 .container__home {
   min-height: 100vh;
@@ -139,7 +151,7 @@
   box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.39);
   width: 75vw;
   height: 55vh;
-  background-color: #2e85cc5e;
+  background-image: url("/triangles.webp");
 }
 
 .settings__title {
@@ -153,10 +165,18 @@
   color: rgba(243, 168, 71, 0.74);
 }
 
+.container__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container__input__settings {
   display: grid;
   text-align: center;
   align-content: center;
+  padding: 10px;
 }
 
 .input__settings input {
@@ -179,6 +199,20 @@
   border: none;
   background-color: #3a86ff;
   color: #ffffff;
+}
+
+.btn--edit{
+  border: none;
+  padding: 5px;
+  border-radius: 14px;
+  width: 60px;
+  transition: all .1s linear;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  color: #fff;
+}
+
+.btn--edit:hover{
+  transform: scale(0.9);
 }
 
 
@@ -287,12 +321,76 @@
   width: 200px;
   height: 300px;
   background-image: url("/pokeball2.png");
-  background-color: #dd641e8e;
+  background-color: #4372a7de;
+  backdrop-filter: blur(3px);
   text-decoration: none;
   color: black;
   border-radius: 10px;
   color: white;
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+  overflow: hidden;
+  z-index: 10;
+  touch-action: none;
+  
+  border-radius: 5% / 3.5%;
+  box-shadow: 
+    -5px -5px 5px -5px var(--color1), 
+    5px 5px 5px -5px var(--color2), 
+    -7px -7px 10px -5px transparent, 
+    7px 7px 10px -5px transparent, 
+    0 0 5px 0px rgba(255,255,255,0),
+    0 55px 35px -20px rgba(0, 0, 0, 0.5);
+    transition: all .5s ease;
 }
+
+.container-pokecard:hover {
+  box-shadow: 
+    -20px -20px 30px -25px var(--color1), 
+    20px 20px 30px -25px var(--color2), 
+    -7px -7px 10px -5px var(--color1), 
+    7px 7px 10px -5px var(--color2), 
+    0 0 13px 4px rgba(255,255,255,0.3),
+    0 55px 35px -20px rgba(0, 0, 0, 0.5);
+    transform: rotate3d(1, 1, 1, 15deg) scale(0.9);
+}
+
+.container-pokecard:before,
+.container-pokecard:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  opacity: .5;
+  mix-blend-mode: color-dodge;
+  transition: all .33s ease;
+}
+
+.container-pokecard:after {
+  border-radius: inherit;
+  opacity: 1;
+  background-image: url("/sparkles.gif"),  
+    linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
+  background-position: 50% 50%;
+  background-size: 160%;
+  background-blend-mode: overlay;
+  z-index: 2;
+  filter: brightness(1) contrast(1);
+  transition: all .33s ease;
+  mix-blend-mode: color-dodge;
+  opacity: .75;
+}
+
+.container-pokecard.active:after,
+.container-pokecard:hover:after {
+  filter: brightness(1) contrast(1);;
+  opacity: 1;
+}
+
 
 .title-pokecard {
   padding-top: 1rem;
@@ -539,7 +637,7 @@ li {
 
 .sttings {
   position: fixed;
-  z-index: 3;
+  z-index: 34;
   bottom: 20px;
   right: 20px;
   background: #2e85cc;
@@ -574,8 +672,21 @@ body .sttings i:hover {
 
 .profile__container {
   border-radius: 50%;
-  width: 100px;
+  width: 70px;
   border: 2px solid #000;
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__container img{
+  width: 100%;
+  position: relative;
+  top: 3px;
 }
 
 
@@ -618,6 +729,17 @@ body .sttings i:hover {
   .container-pokedex .pokedex {
     width: 200px;
   }
+
+  .container__pagination ul{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container__pagination ul li{
+    font-size: 25px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -642,7 +764,22 @@ body .sttings i:hover {
   .img-background {
     width: 300px;
   }
-
+    .container__pagination ul li{
+      font-size: 30px;
+    }
+    .profile__container{
+      border-radius: 50%;
+      width: 80px;
+      border: 2px solid #000;
+      position: absolute;
+      top: 50px;
+      right: -40px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
   .container-Detailt {
     flex-direction: row;
     justify-content: center;
@@ -695,4 +832,9 @@ body .sttings i:hover {
     gap: 1rem;
   }
 
+    .profile__container img{
+      width: 100%;
+      position: relative;
+      top: 3px;
+    }
 }

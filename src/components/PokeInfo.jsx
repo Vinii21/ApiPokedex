@@ -11,7 +11,6 @@ const PokeInfo = ({url}) => {
         .catch(error=>console.error(error))
   },[])
 
-
 const pokeImage = (img) =>{
   if (img?.sprites?.other?.home?.front_default!=null) {
     return img?.sprites?.other?.home?.front_default
