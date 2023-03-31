@@ -11,15 +11,18 @@ const PokeInfo = ({url}) => {
         .catch(error=>console.error(error))
   },[])
 
-const pokeImage = (img) =>{
-  if (img?.sprites?.other?.home?.front_default!=null) {
-    return img?.sprites?.other?.home?.front_default
-  }else if (img?.sprites?.other?.dream_world?.front_default==null){
-    return img?.sprites?.front_default 
-  }else if (img?.sprites?.other?.home?.front_default==null){
-  return  img?.sprites?.other?.dream_world?.front_default
-  }
-}
+  const pokeImage = () => {
+    if (pokeInfo?.sprites?.other?.home?.front_default != null) {
+      return pokeInfo.sprites.other.home.front_default;
+    } else if (pokeInfo?.sprites?.other?.dream_world?.front_default != null) {
+      return pokeInfo.sprites.other.dream_world.front_default;
+    } else if (pokeInfo?.sprites?.front_default != null) {
+      return pokeInfo.sprites.front_default;
+    } else {
+      return "/pokeBall.gif";
+    }
+  };
+
 
     return (  
         <Link to={`/pokedex/${pokeInfo?.id}`} className="container-pokecard">
@@ -34,7 +37,7 @@ const pokeImage = (img) =>{
                 <span>speed: {pokeInfo?.stats?.[5].base_stat}</span>
               </div>
               <div>
-                <img className="img-pokecard" src={pokeImage(pokeInfo)} />
+                <img className="img-pokecard" src={pokeImage()} />
               </div>
         </Link>
     );

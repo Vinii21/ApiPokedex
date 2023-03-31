@@ -15,14 +15,16 @@ const DetailPokemon = () => {
       })
       .catch((error) => console.error(error));
   }, []);
-
-  const pokeImage = (img) => {
-    if (img?.sprites?.other?.home?.front_default != null) {
-      return img?.sprites?.other?.home?.front_default;
-    } else if (img?.sprites?.other?.dream_world?.front_default == null) {
-      return img?.sprites?.front_default;
-    } else if (img?.sprites?.other?.home?.front_default == null) {
-      return img?.sprites?.other?.dream_world?.front_default;
+  
+  const pokeImage = () => {
+    if (pokemon?.sprites?.other?.home?.front_default != null) {
+      return pokemon.sprites.other.home.front_default;
+    } else if (pokemon?.sprites?.other?.dream_world?.front_default != null) {
+      return pokemon.sprites.other.dream_world.front_default;
+    } else if (pokemon?.sprites?.front_default != null) {
+      return pokemon.sprites.front_default;
+    } else {
+      return "/pokeBall.gif";
     }
   };
 
@@ -32,7 +34,7 @@ const DetailPokemon = () => {
         <div className="container-img-detailt">
           <img
             className="img-detailt"
-            src={pokeImage(pokemon)}
+            src={pokeImage()}
             alt={pokemon?.name}
           />
         </div>
