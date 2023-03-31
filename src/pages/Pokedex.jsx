@@ -20,7 +20,7 @@ const Pokedex = () => {
   const [checkbox, setCheckbox] = useState(false)
   const [inputPokeName, setInputPokeName] = useState("")
 
-  const [pokemonsPerPage, setPokemonsPerPage] = useState(5)
+  const [pokemonsPerPage, setPokemonsPerPage] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
 
   const [totalPages, setTotalPages] = useState(0)
