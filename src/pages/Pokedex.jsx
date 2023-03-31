@@ -11,6 +11,7 @@ import Profile from "../components/profile";
 const Pokedex = () => {
 
   const trainer = useSelector( state=> state.trainer)
+  const totalPokemons = useSelector( state => state.totalPokemons)
 
   const [types, setTypes] = useState([])
   const [allPokemons, setAllPokemons] = useState([])
@@ -20,7 +21,6 @@ const Pokedex = () => {
   const [checkbox, setCheckbox] = useState(false)
   const [inputPokeName, setInputPokeName] = useState("")
 
-  const [pokemonsPerPage, setPokemonsPerPage] = useState(10)
   const [currentPage, setCurrentPage] = useState(1)
 
   const [totalPages, setTotalPages] = useState(0)
@@ -28,8 +28,8 @@ const Pokedex = () => {
   const [pokemons, setPokemons] = useState([])
   const [alls, setAlls] = useState([])
 
-  const lastIndex = currentPage * pokemonsPerPage
-  const firstIndex = lastIndex - pokemonsPerPage
+  const lastIndex = currentPage * totalPokemons
+  const firstIndex = lastIndex - totalPokemons
 
 
   useEffect(()=>{
@@ -57,7 +57,7 @@ const Pokedex = () => {
         total = pokemons.length
     }
 
-    for(let i = 1; i <= Math.ceil(total / pokemonsPerPage); i++){
+    for(let i = 1; i <= Math.ceil(total / totalPokemons); i++){
         setTotalPages(i)
     }
 })
