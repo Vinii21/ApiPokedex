@@ -3,10 +3,11 @@
   --color2: rgb(255, 0, 231);
   --color3: #4372a7de;
   --bg-c-home: #cfcdcda5;
-  --white: #fff;
   --font-color: #000;
   --bg-c-pokedex: transparent;
   --bg-c-spanPokeCard: rgba(229, 230, 229, 0.504);
+  --bg-c-size: rgb(135,191,255);
+  --bg-gradient-size: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
 }
 
 
@@ -20,6 +21,8 @@
   --font-color: #ffffff;
   --bg-c-pokedex: #00000085;
   --bg-c-spanPokeCard: rgba(110, 11, 156, 0.658);
+  --bg-c-size: rgb(83,56,143);;
+  --bg-gradient-size: radial-gradient(circle, rgba(83,56,143,1) 0%, rgba(47,41,88,1) 94%);
 }
 
 .container__home {
@@ -578,7 +581,6 @@ body .container-size {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border-top: 1px solid rgb(187, 176, 176);
   padding: 1rem;
 }
 
@@ -596,7 +598,6 @@ body .container-size {
 }
 
 .container-type {
-  border-top: 1px solid rgb(187, 176, 176);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -616,17 +617,9 @@ body .container-size {
   border-radius: 10px;
 }
 
-.span-type2 {
-  padding: 1rem;
-  background-color: blueviolet;
-  color: white;
-  border-radius: 10px;
-}
-
 .container-abilities {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgb(187, 176, 176);
   justify-content: center;
 }
 
@@ -639,6 +632,7 @@ body .container-size {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  color: #000;
 }
 
 .spana-abilities {
@@ -764,8 +758,9 @@ body .sttings i:hover {
   align-items: center;
   padding: 1rem;
   gap: 1rem;
-  /* background-color: #02c399c6; */
-  height: 100vh;
+  background-color: var(--bg-c-pokedex);
+  height: 100%;
+  color: var(--font-color);
 }
 
 .container-img-detailt {
@@ -795,8 +790,8 @@ body .sttings i:hover {
 .container-size {
   border-radius: 15px;
   padding: 1rem;
-  background: rgb(135,191,255);
-  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+  background: var(--bg-c-size);
+  background: var(--bg-gradient-size);
 
 }
 
@@ -804,17 +799,15 @@ body .sttings i:hover {
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 15px;
-  background: rgb(135,191,255);
-  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
-  
+  background: var(--bg-c-size);
+  background: var(--bg-gradient-size);
 }
 
 .container-abilities {
-
   border-radius: 15px;
   padding: 1rem;
-  background: rgb(135,191,255);
-  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+  background: var(--bg-c-size);
+  background: var(--bg-gradient-size);
 
 }
 
@@ -840,13 +833,15 @@ body .sttings i:hover {
   padding: 1rem;
   gap: 1rem;
   text-align: center;
-  background: rgb(135,191,255);
-  background: linear-gradient(45deg, rgba(135,191,255,1) 13%, rgba(52,240,255,1) 48%, rgba(135,191,255,1) 86%);
+  background: var(--bg-c-size);
+  background: var(--bg-gradient-size);
+  color: #000;
 }
 
 .container-aside h3 {
   width: 100%;
   text-align: center;
+  color: var(--font-color);
 }
 
 .aside-detailt {
@@ -857,6 +852,37 @@ body .sttings i:hover {
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   border-radius: 10px;
+}
+
+.container-aside::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.container-aside::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.container-aside::-webkit-scrollbar-button:increment,.container-aside:-webkit-scrollbar-button {
+  display: none;
+} 
+
+.container-aside::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+
+.container-aside::-webkit-scrollbar-thumb {
+  background-color: rgba(112, 112, 124, 0.836);
+  border-radius: inherit;
+  border: none;
+}
+
+.container-aside::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+.container-aside {
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: rgba(112, 112, 124, 0.836) rgba(233, 232, 230, 0);   /* scroll thumb and track */
 }
 
 /* =========== Media Queries ======== */
@@ -895,6 +921,10 @@ body .sttings i:hover {
     width: 350px;
   }
 
+  .welcome-pokedex .color--name{
+    color: #bb0560;
+  }
+
   .container-pokedex .pokedex {
     width: 200px;
   }
@@ -912,6 +942,12 @@ body .sttings i:hover {
 
   .container__form--range{
     width: 220px;
+  }
+  .btnback {
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
   }
 }
 

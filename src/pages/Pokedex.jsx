@@ -98,7 +98,7 @@ const Pokedex = () => {
       <div className="container__welcome">
         <img className="pokedex" src="/Pokedex_logo.png" alt="Logo pokedex" />
         <div className="welcome-pokedex">
-          <p>"Welcome {trainer.name}, here you can find your favorite pokemon"</p>
+          <p>"Welcome <span className="color--name">{trainer.name}</span>, here you can find your favorite pokemon"</p>
           < Profile />
         </div>
       </div>

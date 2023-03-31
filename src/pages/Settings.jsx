@@ -116,7 +116,7 @@ const Settings = () => {
       <hr />
         <form className="container__form--range" onSubmit={onSubmit}>
           <label htmlFor="num">POKE X PAGE</label>
-          <input className="drag__bar" id="num" required value={num} onChange={(e)=>setNum(e.target.value)} type="range" max="50" min="1"/>
+          <input className="drag__bar" id="num" required value={num} onChange={(e)=>setNum(e.target.value)} type="range" step="4" max="20" min="4"/>
           <span>{num}</span>
           <button className="btn--edit" type="submit">Set</button>
         </form>
