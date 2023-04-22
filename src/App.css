@@ -889,6 +889,23 @@ body .sttings i:hover {
   scrollbar-color: rgba(112, 112, 124, 0.836) rgba(233, 232, 230, 0);   /* scroll thumb and track */
 }
 
+footer{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+footer p a{
+  color: tomato;
+  transition: all .5s linear;
+}
+footer p a:hover{
+  color: #000;
+}
+
 /* =========== Media Queries ======== */
 
 @media only screen and (min-width: 600px) {

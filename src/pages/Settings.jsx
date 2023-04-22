@@ -5,6 +5,7 @@ import { setTrainer } from "../store/slices/trainer.slice";
 import { useState } from "react";
 import { settotalPokemons } from "../store/slices/totalPokemons.slice";
 import { setdarkMode } from "../store/slices/darkMode.slice";
+import Footer from "../components/Footer";
 
 const Settings = () => {
 
@@ -121,6 +122,7 @@ const Settings = () => {
           <button className="btn--edit" type="submit">Set</button>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };
